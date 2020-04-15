@@ -2,48 +2,164 @@
 <html lang="fr">
   <head>
     <title>Formulaire - Les pontonautes</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <h1>
-      Les Pontonautes créent une plateforme de localisation des producteurs et
-      des commerçants locaux
-    </h1>
-    <p class="petit_texte">
-      Nous mettons en ligne un site pour les locavores recensant les producteurs
-      locaux et les commerces ouverts en ces temps de confinement. C'est le
-      moment ou jamais de découvrir nos producteurs locaux et nos commerçants
-      indépendants. Producteurs, commerçants, si vous souhaitez vous rendre
-      visibles, c'est ici ! L'annuaire est ici, il est gratuit et va s'enrichir
-      au fil au fil du temps.
-    </p>
-    <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input
-          type="email"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder="Enter email"
-        />
-        <small id="emailHelp" class="form-text text-muted"
-          >We'll never share your email with anyone else.</small
-        >
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          id="exampleInputPassword1"
-          placeholder="Password"
-        />
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <img src="logo.png" />
+
+    <div class="text">
+      <h1>
+        Les Pontonautes créent une plateforme de localisation des producteurs et
+        des commerçants locaux
+      </h1>
+
+      <p>
+        Nous mettons en ligne un site pour les locavores recensant les
+        producteurs locaux et les commerces ouverts en ces temps de confinement.
+        C'est le moment ou jamais de découvrir nos producteurs locaux et nos
+        commerçants indépendants. Producteurs, commerçants, si vous souhaitez
+        vous rendre visibles, c'est ici ! L'annuaire est ici, il est gratuit et
+        va s'enrichir au fil au fil du temps.
+      </p>
+    </div>
+    <div class="form-style">
+      <form name="formulaire">
+        <fieldset>
+          <!-- Demande de l'email -->
+          <input type="email" name="email" placeholder="Votre Email" required />
+          <small id="emailHelp">Votre email est bien valide. Merci.</small>
+          <input
+            id="butt_verif"
+            type="button"
+            value="Vérifier"
+            onClick="verifmail(document.formulaire.email.value)"
+          />
+        </fieldset>
+
+        <div id="zone2">
+          <!-- 0) Nom Prénom -->
+          <fieldset>
+            <legend><span class="number">1</span> Nom</legend>
+            <input type="text" name="field1" placeholder="Nom" />
+            <legend>Prénom</legend>
+            <input type="text" name="field2" placeholder="Prénom" />
+          </fieldset>
+
+          <!-- A) Commerçant ou Producteur ? -->
+          <fieldset>
+            <legend><span class="number">2</span>Je suis...</legend>
+            <label for="commerce_local" class="qcommercant">
+              <input
+                id="a_option-two"
+                type="radio"
+                name="optionsRadios"
+                value="option1"
+                checked
+              />
+              un commerçant/une commerçante indépendant(e) local(e) </label
+            ><br />
+            <label for="producteur_local" class="pure-radio">
+              <input
+                id="a_option-three"
+                type="radio"
+                name="optionsRadios"
+                value="option2"
+              />
+              un producteur/une productrice locale </label
+            ><br />
+          </fieldset>
+
+          <!-- B) Nom de la ferme/boutique -->
+          <fieldset>
+            <legend>
+              <span class="number">3</span>Nom de votre boutique/ferme
+            </legend>
+            <input id="name_boutique" type="text" placeholder="" />
+          </fieldset>
+
+          <!-- C) Adresse de la ferme/boutique -->
+
+          <fieldset>
+            <legend>
+              <span class="number">4</span>Adresse de votre ferme/boutique
+            </legend>
+            <small class="petit_text"
+              >N° de rue, rue, lieu-dit, code postal, ville</small
+            >
+            <input id="adresse" type="text" placeholder="" />
+          </fieldset>
+
+          <!-- D) Tél. -->
+
+          <fieldset>
+            <legend><span class="number">5</span>Numéro de téléphone</legend>
+            <input id="qtel" type="tel" placeholder="0x xx xx xx xx" />
+          </fieldset>
+
+          <!-- E) Page Facebook -->
+
+          <fieldset>
+            <legend><span class="number">6</span>Votre page Facebook</legend>
+            <small class="petit_text"
+              >si vous en avez une : merci de copier le lien</small
+            >
+            <input id="qfacebook" type="url" placeholder="https//..." />
+          </fieldset>
+
+          <!-- F) Site web-->
+
+          <fieldset>
+            <legend><span class="number">7</span>Votre site internet</legend>
+            <small class="petit_text"
+              >si vous en avez un : merci de copier le lien</small
+            >
+            <input id="qsite" type="url" placeholder="https//..." />
+          </fieldset>
+
+          <!-- G) Description-->
+
+          <fieldset>
+            <legend>
+              <span class="number">8</span>Description de votre boutique et vos
+              produits
+            </legend>
+            <textarea id="qdesc"></textarea>
+          </fieldset>
+
+          <!-- K) Choix : Ouvert ou Fermé -->
+
+          <fieldset>
+            <legend><span class="number">9</span>Etes-vous...</legend>
+
+            <label for="ouvert">
+              <input
+                id="k_option-two"
+                type="radio"
+                name="optionsRadios"
+                value="optionk1"
+                checked
+              />
+              Ouvert </label
+            ><br />
+
+            <label for="ferme">
+              <input
+                id="k_option-three"
+                type="radio"
+                name="optionsRadios"
+                value="optionk2"
+              />
+              Fermé
+            </label>
+          </fieldset>
+        </div>
+
+        <!-- BOUTON SUIVANT  -->
+
+        <input type="submit" value="Suivant" id="butt_submit" />
+      </form>
+    </div>
   </body>
+
+  <script src="/src/script.js"></script>
 </html>
