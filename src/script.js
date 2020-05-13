@@ -24,3 +24,25 @@ function verifmail(a) {
 
   return testm;
 }
+/////////////////////////////////////////////////////////////////////////////////
+//OBJECTIF → vérifier à chaque ligne
+// 1_ lorsque click sur input suivant (ex: input 2)
+// 2_ function vérifier input précédant (ex: on vérifie input 1)
+// 3_ si "" alors alert 'case vide"
+
+//la fonction de vérification si vide
+function validateForm() {
+  var nameverif = document.forms["formulaire"]["fnom"].value;
+  if (nameverif == "") {
+    alert("nameverif est pas là");
+    return false;
+    // } else {
+    //   alert("yes");
+    // }
+  }
+  //si clique sur l'input "prénom" → lance la function validate
+  // function ve_prenom() {
+  //   alert("oui tu as bien cliqué");
+  //   return validateForm();
+  // }
+}

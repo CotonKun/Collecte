@@ -3,6 +3,7 @@
   <head>
     <title>Formulaire - Les pontonautes</title>
     <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/main.css" />
   </head>
   <body>
     <img src="logo.png" />
@@ -27,7 +28,7 @@
         <fieldset>
           <!-- Demande de l'email -->
           <input type="email" name="email" placeholder="Votre Email" required />
-          <small id="emailHelp">Votre email est bien valide. Merci.</small>
+          <!-- <small id="emailHelp">Votre email est bien valide. Merci.</small> -->
           <input
             id="butt_verif"
             type="button"
@@ -40,9 +41,9 @@
           <!-- 0) Nom Prénom -->
           <fieldset>
             <legend><span class="number">1</span> Nom</legend>
-            <input type="text" name="field1" placeholder="Nom" />
+            <input type="text" name="fnom" placeholder="Nom" />
             <legend>Prénom</legend>
-            <input type="text" name="field2" placeholder="Prénom" />
+            <input type="text" name="fprenom" placeholder="Prénom" onclick="ve_prenom()" />
           </fieldset>
 
           <!-- A) Commerçant ou Producteur ? -->
@@ -158,17 +159,252 @@
 
         <input type="submit" value="Suivant" id="butt_submit" />
 
+        <!---------------------------------- 2) SI CLIQUE SUR OUVERT ----------------------------------------->
         <div class="part_ouvert">
           <fieldset>
             <legend>
-              <span class="number">9</span>Vos horaires d'ouverture
+              <span class="number">10</span>Vos horaires d'ouverture
             </legend>
             <!-- Lundi Matin -->
             <small class="petit_text">Ouverture Lundi matin</small>
             <input type="time" placeholder="" type="" />
             <small class="petit_text">Fermeture Lundi matin</small>
             <input type="time" placeholder="" type="" />
+            <!-- Lundi Aprem -->
+            <small class="petit_text">Ouverture Lundi Aprés-midi</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Lundi Après-midi</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Mardi Matin -->
+            <small class="petit_text">Ouverture Mardi matin</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Mardi matin</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Mardi Aprem -->
+            <small class="petit_text">Ouverture Mardi Aprés-midi</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Mardi Après-midi</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Mercredi Matin -->
+            <small class="petit_text">Ouverture Mercredi matin</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Mercredi matin</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Mercredi Aprem -->
+            <small class="petit_text">Ouverture Mercredi Aprés-midi</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Mercredi Après-midi</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Jeudi Matin -->
+            <small class="petit_text">Ouverture Jeudi matin</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Jeudi matin</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Jeudi Aprem -->
+            <small class="petit_text">Ouverture Jeudi Aprés-midi</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Jeudi Après-midi</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Vendredi Matin -->
+            <small class="petit_text">Ouverture Vendredi matin</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Vendredi matin</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Vendredi Aprem -->
+            <small class="petit_text">Ouverture Vendredi Aprés-midi</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Vendredi Après-midi</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Samedi Matin -->
+            <small class="petit_text">Ouverture Samedi matin</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Samedi matin</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Samedi Aprem -->
+            <small class="petit_text">Ouverture Samedi Aprés-midi</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Samedi Après-midi</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Dimanche Matin -->
+            <small class="petit_text">Ouverture Dimanche matin</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Dimanche matin</small>
+            <input type="time" placeholder="" type="" />
+            <!-- Dimanche Aprem -->
+            <small class="petit_text">Ouverture Dimanche Aprés-midi</small>
+            <input type="time" placeholder="" type="" />
+            <small class="petit_text">Fermeture Dimanche Après-midi</small>
+            <input type="time" placeholder="" type="" />
           </fieldset>
+
+          <!-- INFOS COMPLEMENTAIRES -->
+          <fieldset>
+            <legend><span class="number">B</span>Infos Complémentaires</legend>
+            <small class="petit_text"
+              >Ajoutez ici le manque d'infos, si vos horaires sont spécifiques
+              vous pouvez le remplir ici</small
+            >
+            <textarea id="qcomplentaire"></textarea>
+          </fieldset>
+
+          <!-- POUVEZ-VOUS LIVREZ ? -->
+          <fieldset>
+            <legend><span class="number">C</span>Livraison</legend>
+            <label for="livraisonq">
+              <input
+                id="c_option-two"
+                type="radio"
+                name="optionsRadios2"
+              />Oui</label
+            ><br />
+            <label for="producteur_local">
+              <input
+                id="c_option-three"
+                type="radio"
+                name="optionsRadios2"
+              />Non</label
+            ><br />
+          </fieldset>
+        </div>
+        <!---------------------------------- FIN = SI CLIQUE SUR OUVERT ----------------------------------------->
+
+        <!---------------------------------- 3)SI CLIQUE SUR FERME ----------------------------------------->
+
+        <div class="part_ferme">
+          <fieldset>
+            <legend>
+              <span class="number">10</span>Vous êtes fermé mais...
+            </legend>
+            <small class="petit-text"
+              >Avez-vous la possibilité de livrer vos produits ?</small
+            >
+            <label for="livraisonq">
+              <input
+                id="d_option-two"
+                type="radio"
+                name="optionsRadios1"
+                value="option1"
+                checked
+              />Oui</label
+            ><br />
+            <label for="producteur_local">
+              <input
+                id="d_option-three"
+                type="radio"
+                name="optionsRadios1"
+                value="option2"
+              />Non</label
+            ><br />
+          </fieldset>
+        </div>
+        <!---------------------------------- FIN = SI CLIQUE SUR FERME ----------------------------------------->
+
+        <!---------------------------------- 4) SI LIVRAISON ----------------------------------------->
+        <div class="part-livraison">
+          <fieldset>
+            <legend>
+              <span class="number">A</span>Vous Livrez ? Comment ?
+            </legend>
+            <small class="petit-text">Plusieurs choix possibles*</small><br />
+            <label
+              ><input type="checkbox" id="e_option-two" />Envoi par la
+              poste</label
+            >
+            <label
+              ><input type="checkbox" id="e_option-three" />Livraison effectué
+              par vous-même</label
+            >
+            <label
+              ><input type="checkbox" id="e_option-four" />Dépôt chez un autre
+              commerçant (précisez où dans Autre)</label
+            >
+            <label>
+              <input type="checkbox" />Autre
+              <textarea id="e_option-five"></textarea>
+            </label>
+          </fieldset>
+
+          <!-- Prix Minimum -->
+          <fieldset>
+            <legend>
+              <span class="number">B</span>Panier minimum pour être livré ?
+              (Prix)
+            </legend>
+            <input
+              id="prix_panier"
+              type="text"
+              placeholder="Ex: Envoi à partir de 10€ d'achats"
+            />
+          </fieldset>
+
+          <!-- Moyen de paiement -->
+          <fieldset>
+            <legend>
+              <span class="number">C</span>Quels sont les moyens de paiement
+              acceptés
+            </legend>
+            <label
+              ><input type="checkbox" id="f_option-two" />Carte Bancaire</label
+            >
+            <label><input type="checkbox" id="f_option-three" />Chèque</label>
+            <label><input type="checkbox" id="f_option-four" />Espèces</label>
+          </fieldset>
+        </div>
+        <!---------------------------------- FIN = SI LIVRAISON ----------------------------------------->
+
+        <!---------------------------------- 5) DERNIER BLOCK ----------------------------------------->
+        <div class="part_final">
+          <legend class="bientotfini">
+            C'est bientôt fini ! Courage !
+          </legend>
+
+          <fieldset>
+            <legend>
+              <span class="number">11</span>Avez-vous un autre moyen de vente ?
+            </legend>
+            <label
+              ><input type="checkbox" id="g_option-two" />Marché (Préciser jour et lieu dans "Autre")</label
+            >
+            <label
+              ><input type="checkbox" id="g_option-three" />Drive (point de retrait à préciser dans "Autre")</label
+            >
+            <label
+              ><input type="checkbox" id="g_option-four" />Boutique en ligne (Adresse de la boutique à préciser dans "Autre")</label
+            >
+            <label>
+            <label
+                ><input type="checkbox" id="g_option-five" />Dépôt de colis à la poste</label
+              >
+            <label>
+            <label
+                ><input type="checkbox" id="g_option-six" />Plateforme "Ma ville Mon Shopping" (Adresse de la boutique à préciser dans "Autre")</label
+              >
+            <label>
+            <label
+                ><input type="checkbox" id="g_option-seven" />Boutique ouverte accueillant vos produits (préciser dans "Autre")</label
+              >
+            <label>
+            <label
+                ><input type="checkbox" id="g_option-eight" />Aucun autre moyen de vente</label
+              >
+            <label>
+              <input type="checkbox" />Autre
+              <textarea id="e_option-nine"></textarea>
+            </label>
+          </fieldset>
+
+          <!-- INFO PARTICULIERE -->
+          <fieldset>
+              <legend><span class="number">12</span>Avez-vous une information particulière que vous souhaiteriez partager ? (info covid, spécialité, coup de cœur, produit de saison à mettre en valeur, ce que vous voulez développer à l'avenir  ...)</legend>
+
+              <textarea id="qcomplentaire2"></textarea>
+            </fieldset>
+
+            <!-- IMAGES -->
+            <fieldset>
+                <legend><span class="number">13</span>Avez-vous des images de vous (on veut vous voir !) ? ou bien illustrant vos produits ? ou votre boutique/ferme ? (Vous pouvez insérer jusqu'à 5 photos)</legend>
+                <input type="url" placeholder="https//...">
+            </fieldset>
         </div>
       </form>
     </div>
